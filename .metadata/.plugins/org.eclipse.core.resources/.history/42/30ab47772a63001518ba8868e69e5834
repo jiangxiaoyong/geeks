@@ -1,0 +1,17 @@
+package geeks;
+
+import java.util.List;
+
+public class FindTwoRepeatingNum {
+
+	public List<Integer> solution(int[] array){
+		
+	}
+	public static void main(String[] args) {
+		int[] array = {4, 2, 4, 5, 2, 3, 1};
+		FindTwoRepeatingNum object= new FindTwoRepeatingNum();
+		List<Integer> list = object.solution(array);
+		System.out.println(list);
+	}
+
+}

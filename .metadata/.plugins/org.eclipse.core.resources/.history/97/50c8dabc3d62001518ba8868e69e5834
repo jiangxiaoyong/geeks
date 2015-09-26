@@ -1,0 +1,30 @@
+package geeks;
+
+import java.util.Hashtable;
+
+public class FindFirstNonrepeatingChar {
+
+	public int solution(String str){
+		Hashtable<Character, Integer> table = new Hashtable<Character, Integer>();
+		for(char key : str.toCharArray()){
+			if(!table.containsKey(key)){
+				table.put(key, 1);
+			}
+			else{
+				table.put(key, table.get(key).intValue()+1);
+			}
+		}
+		
+		if(table.containsValue(1)){
+			System.out.println("yes");
+		}
+	}
+	public static void main(String[] args) {
+		String str = "geeksforgeeks";
+		FindFirstNonrepeatingChar object = new FindFirstNonrepeatingChar();
+		int i = object.solution(str);
+		System.out.println("char = " + str.toCharArray()[i]);
+		
+	}
+
+}

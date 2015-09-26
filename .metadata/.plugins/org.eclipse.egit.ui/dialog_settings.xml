@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="true" key="CommitDialog.showUntracked"/>
+	<list key="CommitDialog.authorValues">
+		<item value="jiangxiaoyong &lt;jiangxiaoyong904@gmail.com&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="jiangxiaoyong &lt;jiangxiaoyong904@gmail.com&gt;"/>
+	</list>
+	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">
+		<item value="768" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|14.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="468" key="DIALOG_HEIGHT"/>
+		<item value="416" key="DIALOG_X_ORIGIN"/>
+		<item value="137" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.egit.ui.COMMIT_DIALOG_SECTION">
+		<item value="839" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|14.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="746" key="DIALOG_HEIGHT"/>
+		<item value="381" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+	</section>
+</section>
