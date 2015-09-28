@@ -1,0 +1,67 @@
+package TreeAndGraph;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
+import java.util.TreeMap;
+
+public class BottomViewofBTree {
+	
+	public void BottomView(Node node){
+		
+		Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
+		Queue<Qnode> queue = new LinkedList<Qnode>();
+		queue.add(new Qnode(0, node));
+		
+		if(!queue.isEmpty()){
+			Qnode qn = queue.remove();
+			int level = qn.level;
+			Node n = qn.node;
+			
+			//update map to record latest value for each vertical level
+			map.put(level, n.data);
+			
+			if(n.left!= null){
+				queue.add(new Qnode(level +1, n.left));
+			}
+			
+			if(n.right != null){
+				queue.add(new Qnode(level-1, n.right));
+			}
+			
+		}
+		
+		for(Integer key : map.keySet()){
+			int i = map.get(key).intValue()	;
+			System.out.println(i);
+		}
+	}
+	public static void main(String[] args) {
+		Node root = new Node(1);
+		root.left = new Node(2);
+		root.right = new Node(3);
+		root.left.left = new Node(4);
+		root.left.right = new Node(5);
+		root.left.right.left = new Node(6);
+		root.left.right.right = new Node(7);
+		root.right.right = new Node(8);
+		
+		BottomViewofBTree object = new BottomViewofBTree();
+		object.BottomView(root);
+	}
+
+}
+
+
+class Qnode{
+	
+	int level;
+	Node node;
+	
+	public Qnode(int level, Node node){
+		
+		this.level = level;
+		this.node = node;
+	}
+}

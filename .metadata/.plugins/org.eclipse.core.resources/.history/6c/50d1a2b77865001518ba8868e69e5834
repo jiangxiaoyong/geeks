@@ -1,0 +1,50 @@
+package TreeAndGraph;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class LevelOrderTraversel {
+
+	int cur = 0;
+	public List<ArrayList<Integer>> traverse(Node node){
+		if(node == null) return null;
+		List<ArrayList<Integer>> lists = new ArrayList<ArrayList<Integer>>();
+		solution(node, lists, 1);
+		return lists;
+	}
+	
+	public void solution(Node node,List<ArrayList<Integer>> result, int level	){
+		if(node == null) return;
+		
+		if(cur < level){
+			cur = level;
+			ArrayList<Integer> list = new ArrayList<Integer>();
+			list.add(node.data);
+			result.add(list);
+		}else{
+			ArrayList<Integer> list = result.get(level);
+			list.add(node.data);
+		}
+		
+		solution(node.left, result, level+ 1);
+		solution(node.right, result, level+1);
+	}
+	public static void main(String[] args) {
+		Node root = new Node(1);
+		root.left = new Node(2);
+		root.right = new Node(3);
+		root.left.left = new Node(4);
+		root.left.right = new Node(5);
+		root.left.right.left = new Node(6);
+		root.left.right.right = new Node(7);
+		root.right.right = new Node(8);
+		
+		LevelOrderTraversel object = new LevelOrderTraversel();
+		List<ArrayList<Integer>> list = object.traverse(root);
+		for(List<Integer> entry : list){
+			System.out.println("next level");
+			System.out.println(entry);
+		}
+	}
+
+}

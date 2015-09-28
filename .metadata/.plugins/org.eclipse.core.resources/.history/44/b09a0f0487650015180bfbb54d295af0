@@ -1,0 +1,31 @@
+package TreeAndGraph;
+
+public class CheckCousins {
+
+	public boolean solution(Node node, Node n1, Node n2){
+		if(node == null) return false;
+		
+		if(node.left == n1 && node.right == n2){
+			return true;
+		}
+		
+		return solution(node.left, n1, n2) || solution(node.right, n1, n2);
+	}
+	public static void main(String[] args) {
+		Node root = new Node(1);
+		root.left = new Node(2);
+		root.right = new Node(3);
+		root.left.left = new Node(4);
+		root.left.right = new Node(5);
+		root.left.right.left = new Node(6);
+		root.left.right.right = new Node(7);
+		root.right.right = new Node(8);
+		
+		CheckCousins object = new CheckCousins();
+		Node n1 = root.left.left;
+		Node n2 = root.right.right;
+		boolean d = object.solution(root, n1, n2);
+		System.out.println(d);
+	}
+
+}
