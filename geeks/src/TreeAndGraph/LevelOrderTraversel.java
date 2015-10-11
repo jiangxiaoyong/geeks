@@ -10,13 +10,13 @@ import java.util.TreeMap;
 public class LevelOrderTraversel {
 
 	int cur = 0;
-	public Map<Integer,ArrayList<Integer>> traverse(Node node){
+	public ArrayList<ArrayList<Integer>> traverse(Node node){
 		if(node == null) return null;
-		//List<ArrayList<Integer>> lists = new ArrayList<ArrayList<Integer>>();
-		Map<Integer, ArrayList<Integer>> lists = new TreeMap<Integer,ArrayList<Integer>>();
-		//solution(node, lists, 1);
-		solution2(node, lists);
-		return lists;
+		List<ArrayList<Integer>> lists = new ArrayList<ArrayList<Integer>>();
+		//Map<Integer, ArrayList<Integer>> lists = new TreeMap<Integer,ArrayList<Integer>>();
+		solution(node, lists, 1);
+		//solution2(node, lists);
+		return (ArrayList<ArrayList<Integer>>) lists;
 	}
 	
 	public void solution(Node node,List<ArrayList<Integer>> result, int level	){
@@ -74,11 +74,11 @@ public class LevelOrderTraversel {
 		root.right.right = new Node(8);
 		
 		LevelOrderTraversel object = new LevelOrderTraversel();
-		Map<Integer,ArrayList<Integer>> list = object.traverse(root);
-		for(Map.Entry<Integer, ArrayList<Integer>> entry : list.entrySet()){
-			ArrayList<Integer> l = entry.getValue();
+		ArrayList<ArrayList<Integer>> list = object.traverse(root);
+		for(ArrayList<Integer> entry : list){
+			//ArrayList<Integer> l = entry.getValue();
 			System.out.println("next level");
-			System.out.println(l);
+			System.out.println(entry);
 		}
 	}
 

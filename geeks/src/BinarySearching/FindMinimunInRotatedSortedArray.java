@@ -18,6 +18,7 @@ public class FindMinimunInRotatedSortedArray {
 		
 		int mid = (left + right) / 2;
 		
+		//right hand side is minimum
 		if(array[mid] > array[mid +1]){
 			return array[mid+1];
 		}

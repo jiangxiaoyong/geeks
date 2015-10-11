@@ -29,6 +29,9 @@ public class CountInversionInArray {
 			System.out.println(l);
 		}
 		
+		StringBuffer s = new StringBuffer("hello");
+		if(s.length() >6 && (s.append("there").equals("false")));
+		System.out.println("vlaue " + s);
 	}
 
 }
